@@ -1,1 +1,2 @@
-# Simple_AI
+# Simple AI
+A Simple AI Based on database and manual learn...
