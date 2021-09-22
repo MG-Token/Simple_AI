@@ -84,7 +84,7 @@ namespace Simple_AI
                     }
                     if (inp == "help" || inp == "Help")
                     {
-                        app.write($@"Mr {app.name} Welcome to my World i created by Metal Ghost (GitHub.com/Metal-Ghost)
+                        app.write($@"Mr {app.name} Welcome to my World i maded by Metal Ghost (GitHub.com/MG-Token)
 Enter any word in this list to run AI Parameter:
 0x0 is bot name
 0x1 is user name
@@ -106,7 +106,7 @@ Enter any word in this list to run AI Parameter:
                             WebClient wb = new WebClient();
                             wb.DownloadProgressChanged += Wb_DownloadProgressChanged;
                             wb.DownloadFileCompleted += Wb_DownloadFileCompleted;
-                            wb.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/Metal-Ghost/Simple_AI/master/Database.AI"), app.databasedir);
+                            wb.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/MG-Token/Simple_AI/master/Database.AI"), app.databasedir);
 
                             void Wb_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
                             {
