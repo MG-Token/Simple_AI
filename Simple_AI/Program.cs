@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,6 +11,8 @@ namespace Simple_AI
     {
         static void Main(string[] args)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.Expect100Continue = true;
             app.write("hi im Simple AI (Artificial intelligence)");
             app.write("I can talk with you!");
             app.write("in the first. choose name for me :)");
@@ -84,7 +86,7 @@ namespace Simple_AI
                     }
                     if (inp == "help" || inp == "Help")
                     {
-                        app.write($@"Mr {app.name} Welcome to my World i maded by Metal Ghost (GitHub.com/MG-Token)
+                        app.write($@"Mr {app.name} Welcome to my World i created by Metal Ghost (GitHub.com/MG-Token)
 Enter any word in this list to run AI Parameter:
 0x0 is bot name
 0x1 is user name
@@ -103,10 +105,11 @@ Enter any word in this list to run AI Parameter:
                         app.write("Downloading AI database...", app.botname);
                         Task.Run(() =>
                         {
+                           
                             WebClient wb = new WebClient();
                             wb.DownloadProgressChanged += Wb_DownloadProgressChanged;
                             wb.DownloadFileCompleted += Wb_DownloadFileCompleted;
-                            wb.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/MG-Token/Simple_AI/master/Database.AI"), app.databasedir);
+                            wb.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/MG-Token/Simple_AI/main/Simple_AI/bin/Debug/Database.AI"), app.databasedir);
 
                             void Wb_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
                             {
